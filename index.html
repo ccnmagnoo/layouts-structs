@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Layout Example</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+        border: 1px dotted rgb(119, 91, 146);
+      }
+      body {
+        --primary: rgb(34, 31, 47);
+        --secondary: rgb(119, 91, 146);
+        --caption: hsla(165, 100%, 50%, 0.9);
+        --padding-big: 1em 0 1em 0;
+        --padding-small: 0.1em 0 0.1em 0;
+
+        background-color: var(--primary);
+        color: var(--secondary);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 24px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+      }
+      header {
+        background-color: black;
+        padding: var(--padding-small);
+      }
+
+      .main {
+        display: flex;
+        flex: 1;
+        margin: 1em 0 1em 0;
+      }
+
+      .left {
+        background-color: var(--caption);
+        padding: var(--padding-big);
+        flex: 1 1 100px;
+      }
+
+      main {
+        background-color: black;
+        padding: var(--padding-big);
+        justify-content: center;
+        flex: 5 5 150px;
+      }
+
+      .right {
+        background-color: var(--caption);
+        padding: var(--padding-big);
+        flex: 1 1 100px;
+      }
+
+      footer {
+        background-color: black;
+        padding: var(--padding-small);
+      }
+
+      @media all and (max-width: 550px) {
+        .main {
+          flex-direction: column;
+        }
+        main {
+          padding: var(--padding-small);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>header</header>
+    <div class="main">
+      <aside class="left">left panel</aside>
+      <main>main content</main>
+      <aside class="right">right panel</aside>
+    </div>
+    <footer>footer</footer>
+  </body>
+</html>
